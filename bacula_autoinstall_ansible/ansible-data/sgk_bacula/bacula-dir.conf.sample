@@ -1,0 +1,58 @@
+Director {
+	Name = COLUMN#dir-dir#
+	DIRport = 9101
+	QueryFile = "/etc/bacula/scripts/query.sql"
+	WorkingDirectory = "/var/lib/bacula"
+	PidDirectory = "/run/bacula"
+	Maximum Concurrent Jobs = 2
+	Password = "COLUMN#dirpass#"
+	Messages = Daemon
+	DirAddress = COLUMN#10.2.0.7#
+}
+
+JobDefs {
+	Name = "DefaultJob"
+	Type = Backup
+	Level = Full
+	Client = COLUMN#dir-fd#
+	FileSet = "COLUMN#Full_Set#"
+	Storage = COLUMN#stor-sd#
+	Messages = Standard
+	SpoolAttributes = yes
+	Priority = 10
+	Write Bootstrap = "/var/lib/bacula/%c.bsr"
+}
+
+Job {
+  Name = "RestoreFiles"
+  Type = Restore
+  Client = COLUMN#dir-fd#
+  Messages = Standard
+  Priority = 10
+  Pool = File
+  FileSet = "Full_Set"
+  Storage = COLUMN#stor-sd#
+  Where = /
+}
+
+
+Pool {
+	Name = File
+	Pool Type = Backup
+	Recycle = yes
+	Volume Retention = 21 days
+	AutoPrune = yes
+	Maximum Volume Bytes = 10G
+	Maximum Volumes = 10
+	Label Format = "Vol-"
+}
+
+@|"sh -c 'for f in /etc/bacula/job.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/client.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/fileset.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/schedule.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/pool.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/storage.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/message.d/*.conf ; do echo @${f} ; done'"
+@|"sh -c 'for f in /etc/bacula/catalog.d/*.conf ; do echo @${f} ; done'"
+

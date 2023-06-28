@@ -1,0 +1,11 @@
+Pool {
+	Name = COLUMN#File#
+	Pool Type = Backup
+	Recycle = yes
+	Volume Retention = COLUMN#21 days#
+	AutoPrune = yes
+	Maximum Volume Bytes = COLUMN#15G#
+	Maximum Volumes = COLUMN#3#
+	Label Format = "COLUMN#dir-#"
+}
+

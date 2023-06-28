@@ -1,0 +1,13 @@
+FileSet {
+	Name = "Set_ansible"
+	Include {
+		Options {
+			signature = MD5
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /etc/ansible
+		File = /usr/doc
+	}
+}

@@ -1,0 +1,18 @@
+FileSet {
+	Name = "Set_DB"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+			RegexFile = "pgsql_.*\.sql"
+		}
+		Options {
+			Exclude = yes
+			Regex = ".*"
+		}
+		File = /tmp
+	}
+}

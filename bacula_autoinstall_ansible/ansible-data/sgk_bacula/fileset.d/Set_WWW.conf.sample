@@ -1,0 +1,13 @@
+FileSet {
+	Name = "Set_WWW"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /var/www
+	}
+}

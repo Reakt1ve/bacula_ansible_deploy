@@ -1,0 +1,14 @@
+Job {
+        Name = "COLUMN#BackupBD#"
+        JobDefs = "DefaultJob"
+        Level = COLUMN#Level#
+        Client = COLUMN#dir-fd#
+        FileSet= "COLUMN#Full_Set#"
+        Pool = COLUMN#File#
+        Storage = COLUMN#stor-sd#
+		ClientRunBeforeJob = "/usr/argus/wizard/modules/rams_backuping.sh backup_cfg dont_stop"
+		ClientRunAfterJob = "sh -c 'rm -fr /usr/argus/backup_*'"
+        Schedule = "COLUMN#WeeklyCycle#"
+        Write Bootstrap = "/var/lib/bacula/%n.bsr"
+        Priority = 11
+}

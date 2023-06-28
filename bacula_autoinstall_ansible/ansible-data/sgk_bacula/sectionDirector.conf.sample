@@ -1,0 +1,5 @@
+
+Director {
+	Name = COLUMN#dir-dir#
+	Password = "COLUMN#clientpass#"
+}

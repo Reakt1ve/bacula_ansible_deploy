@@ -1,0 +1,29 @@
+FileSet {
+	Name = "Full_Set"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /
+		File = /boot
+	}
+	Exclude {
+		File = /tmp
+		File = /run
+		File = /sys
+		File = /mnt
+		File = /proc
+		File = /dev
+		File = /parsefs
+		File = /home/*/thinclient_drives
+		File = /home/*/Desktop
+		File = /root/Desktop
+		File = /etc/sysctl.d/999-astra.conf
+		File = /etc/sysctl.d/README.sysctl
+		File = /etc/sysctl.d/99-sysctl.conf
+	}
+}

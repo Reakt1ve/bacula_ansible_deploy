@@ -1,0 +1,5 @@
+bacula_host_workdir: /usr/doc/ansible-control/bacula/ansible-data
+bacula_copy_host_files:
+  - sgk_bacula
+bacula_remote_workdir: /usr/doc/ansible/bacula
+

@@ -1,0 +1,7 @@
+Director {
+  Name = COLUMN#dir-dir#
+  DIRport = 9101
+  address = COLUMN#10.2.0.7#
+  Password = "COLUMN#dirpass#"
+}
+

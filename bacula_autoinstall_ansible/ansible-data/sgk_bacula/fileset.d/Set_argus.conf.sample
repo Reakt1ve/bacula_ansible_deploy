@@ -1,0 +1,17 @@
+FileSet {
+	Name = "Set_argus"
+	Include {
+		Options {
+			signature = MD5
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+			RegexFile = "^/usr/argus/backup_.*\\.tar\\.gz"
+		}
+		Options {
+			Regex = "^/usr/argus/.*"
+			exclude = yes
+		}
+		File = /usr/argus/
+	}
+}

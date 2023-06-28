@@ -1,0 +1,54 @@
+- name: Install Bacula
+  hosts: all
+  become: yes
+  tasks:
+    - block:
+      - name: Delete previous workdir with content
+        file:
+          state: absent
+          path: '{{ bacula_remote_workdir }}'
+        tags: delete_workdir
+          
+      - name: Create work directory
+        file:
+          path: '{{ bacula_remote_workdir }}'
+          state: directory
+          mode: '0755'
+        tags: create_workdir
+
+      - name: copy script on server
+        copy:
+          src: '{{ bacula_host_workdir }}/{{ item }}'
+          dest: '{{ bacula_remote_workdir }}'
+        tags: copy_script
+        loop: "{{ bacula_copy_host_files }}"
+
+      - name: change permissions for install script
+        file:
+          path: '{{ bacula_remote_workdir }}'
+          mode: '0755'
+          recurse: true
+        tags: change_script_permissions
+
+      - name: Run install script on target server
+        command: "./installBacula.sh"
+        register: out
+        args:
+          chdir: "{{ bacula_remote_workdir }}/sgk_bacula/src.d"
+        tags: install_bacula
+
+      - name: Delete script remains
+        file:
+          state: absent
+          path: '{{ bacula_remote_workdir }}'
+        tags: delete_script_remains
+
+      rescue:
+        - name: Logging hosts with bad results
+          copy:
+            content: '{{ ansible_hostname }}'
+            dest: /var/log/ansible/bacula_error_hosts.log
+          delegate_to: 127.0.0.1
+          tags: logger 
+
+    - debug: var=out.rc

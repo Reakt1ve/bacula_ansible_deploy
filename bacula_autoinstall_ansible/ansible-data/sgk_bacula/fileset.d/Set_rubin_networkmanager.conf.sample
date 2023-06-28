@@ -1,0 +1,14 @@
+FileSet {
+	Name = "Set_rubin_networkmanager"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /etc/nii-rubin/server-networkmanager-astra/server-networkmanager-astra.conf
+		File = /etc/nii-rubin/gui-networkmanager-astra/gui-networkmanager-astra.conf
+	}
+}

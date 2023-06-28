@@ -1,0 +1,13 @@
+FileSet {
+	Name = "Set_rubin_arm"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /etc/nii-rubin/gui-networkmanager-astra/gui-networkmanager-astra.conf
+	}
+}

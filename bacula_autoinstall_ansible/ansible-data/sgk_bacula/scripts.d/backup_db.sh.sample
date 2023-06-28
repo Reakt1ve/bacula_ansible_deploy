@@ -1,0 +1,7 @@
+#!/bin/sh
+pathB=/tmp
+dbUser=bacula
+database=$1
+port=$2
+sudo -u bacula pg_dump -U $dbUser -p $port $database > $pathB/pgsql_$(date "+%Y-%m-%d"_%k-%M-%S).sql
+exit 0

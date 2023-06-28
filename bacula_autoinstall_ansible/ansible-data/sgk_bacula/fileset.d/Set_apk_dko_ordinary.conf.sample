@@ -1,0 +1,17 @@
+FileSet {
+        Name = "Set_apk_dko_ordinary"
+        Include {
+                Options {
+                        signature = MD5
+                        Compression = GZIP
+                        recurse = yes
+                        aclsupport = yes
+                        xattrsupport = yes
+                }
+                File = /primetech
+		File = /etc/init.d/update_client
+		File = /etc/init.d/update_server
+		File = /etc/apache2/sites-available/repo.conf
+        }
+}
+

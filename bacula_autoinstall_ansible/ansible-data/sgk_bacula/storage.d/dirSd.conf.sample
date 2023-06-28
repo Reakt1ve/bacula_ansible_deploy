@@ -1,0 +1,10 @@
+Storage {
+	Name = COLUMN#stor-sd#
+	Address = COLUMN#10.2.0.7#
+	SDPort = 9103
+	Password = "COLUMN#storpass#"
+	Device = COLUMN#Autochanger1#
+	Media Type = COLUMN#File1#
+	Maximum Concurrent Jobs = 2
+}
+

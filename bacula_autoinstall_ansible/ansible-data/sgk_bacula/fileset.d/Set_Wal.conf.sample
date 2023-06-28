@@ -1,0 +1,22 @@
+FileSet {
+	Name = "Set_Wal"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+			RegexDir = "^/var/lub/postgresql/.*/.*/pg_xlog"
+		}
+		Options {
+			RegexDir = "^/var/lib/postgresql/.*/.*/.*"
+			RegexDir = "^/var/lib/postgresql/\\."
+			RegexFile = "^/var/lib/postgresql/.*/.*/.*conf"
+			RegexFile = "^/var/lib/postgresql/.*/.*/post"
+			RegexFile = "^/var/lib/postgresql/.*/.*/PG_VERSION"
+			exclude = yes
+		}
+		File = /var/lib/postgresql/
+	}
+}

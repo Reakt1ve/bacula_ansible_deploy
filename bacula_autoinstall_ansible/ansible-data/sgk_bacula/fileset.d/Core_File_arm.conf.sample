@@ -1,0 +1,12 @@
+FileSet {
+	Name = "Core_File_arm"
+	Include {
+		Options {
+			signature = MD5
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /etc/opt/rubin/sinapsc.conf
+	}
+}

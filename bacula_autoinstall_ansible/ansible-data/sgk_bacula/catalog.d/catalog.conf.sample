@@ -1,0 +1,9 @@
+Catalog {
+	Name = BaculaCatalog
+	DB Address = COLUMN#10.2.0.7#
+	DB PORT = 5432
+	dbname = bacula
+	dbuser = bacula
+	dbpassword = "COLUMN#123qweASD#"
+}
+

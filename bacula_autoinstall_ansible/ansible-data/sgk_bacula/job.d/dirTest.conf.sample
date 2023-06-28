@@ -1,0 +1,13 @@
+Job {
+	Name = "COLUMN#BackupBD#"
+	JobDefs = "DefaultJob"
+	Level = COLUMN#Level#
+	Client = COLUMN#dir-fd#
+	FileSet= "COLUMN#Full_Set#"
+	Pool = COLUMN#File#
+	Storage = COLUMN#stor-sd#
+	Schedule = "COLUMN#WeeklyCycle#"
+	Write Bootstrap = "/var/lib/bacula/%n.bsr"
+	Priority = 11
+}
+

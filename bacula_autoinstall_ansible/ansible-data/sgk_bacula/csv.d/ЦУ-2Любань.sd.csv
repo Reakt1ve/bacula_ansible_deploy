@@ -1,0 +1,6 @@
+Конфигурация для настройки Хранилищ,,,,,,,,,,,
+dir-dir,stor-sd,10.2.0.7,storpass,Autochanger1,File1,FileChgr1,storage_dev,disk,
+ЦУ-2 №3 ТрП-14П Любань,
+srv2cu203.potu.su-dir,srv2cu203.potu.su-sd,10.1.0.3,123qweASDsu2Sd,Autochanger201-1,Media201-1,FileChgr1,/backups/bacula,/dev/sdd,
+srv2cu203.potu.su-dir,srv5cu203.potu.su-sd,10.1.0.6,123qweASDsu2Sd,Autochanger201-2,Media201-2,FileChgr1,/backups/bacula,/dev/sdd,
+

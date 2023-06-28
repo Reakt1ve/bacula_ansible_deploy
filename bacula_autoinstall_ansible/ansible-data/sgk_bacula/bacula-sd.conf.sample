@@ -1,0 +1,38 @@
+Storage {
+	Name = COLUMN#stor-sd#
+	SDPort = 9103
+	WorkingDirectory = "/var/lib/bacula"
+	Pid Directory = "/run/bacula"
+	Maximum Concurrent Jobs = 2
+	SDAddress = COLUMN#10.2.0.7#
+}
+
+Director {
+	Name = COLUMN#dir-dir#
+	Password = "COLUMN#storpass#"
+}
+
+Autochanger {
+	Name = COLUMN#Autochanger1#
+	Device = COLUMN#FileChgr1#
+	Changer Command = ""
+	Changer Device = /dev/null
+}
+
+Device {
+	Name = COLUMN#FileChgr1#
+	Media Type = COLUMN#File1#
+	Archive Device = COLUMN#/backups/bacula#
+	LabelMedia = yes
+	Random Access = Yes
+	AutomaticMount = yes
+	RemovableMedia = no;
+	AlwaysOpen = no;
+	Maximum Concurrent Jobs = 2
+}
+
+Messages {
+	Name = Standard
+	director = COLUMN#dir-dir# = all
+}
+

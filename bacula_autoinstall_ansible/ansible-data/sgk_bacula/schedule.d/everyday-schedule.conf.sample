@@ -1,0 +1,5 @@
+Schedule {
+	Name = "everyday-schedule"
+	Run = Level=Full on 1 at 20:00
+	Run = Level=Incremental daily at 20:00
+}

@@ -1,0 +1,4 @@
+Schedule {
+	Name = "Friday-schedule"
+	Run = Level=Full on fri at 20:00
+}

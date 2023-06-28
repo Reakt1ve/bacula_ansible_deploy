@@ -1,0 +1,4 @@
+Schedule {
+	Name = "Firstdaymounth-schedule"
+	Run = Level=Full on 1 at 20:00
+}

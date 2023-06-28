@@ -1,0 +1,15 @@
+FileSet {
+	Name = "Core_File"
+	Include {
+		Options {
+			signature = MD5
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /opt/kmu/config.ini
+		File = /etc/opt/sinaps.conf
+		File = /var/opt/sinaps
+		File = /var/log/sinaps/vzs
+	}
+}

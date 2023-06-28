@@ -1,0 +1,17 @@
+FileSet {
+	Name = "Set_rubin_timeserver"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /etc/nii-rubin/ctrl-timeserver-astra/ctrl-timeserver-astra.conf
+		File = /etc/nii-rubin/ctrl-timeserver-astra/sources
+		File = /etc/nii-rubin/ctrl-timeserver-astra/access
+		File = /etc/nii-rubin/ctrl-timeserver-astra/credentials
+		File = /etc/chrony.conf
+	}
+}

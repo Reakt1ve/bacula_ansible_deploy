@@ -1,0 +1,4 @@
+[servers-cu101]
+srv2cu101.potu.su ansible_user=andrey ansible_ssh_pass=qwerty123
+srv5cu101.potu.su ansible_user=andrey ansible_ssh_pass=qwerty123
+srv6cu101.potu.su ansible_user=andrey ansible_ssh_pass=qwerty123

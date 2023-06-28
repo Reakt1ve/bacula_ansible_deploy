@@ -1,0 +1,11 @@
+Client {
+	Name = COLUMN#dir-fd#
+	Address = COLUMN#10.2.0.7#
+	FDPort = 9102
+	Catalog = BaculaCatalog
+	Password = "COLUMN#clientpass#"
+	File Retention = 60 days
+	Job Retention = 6 months
+	AutoPrune = yes
+}
+

@@ -1,0 +1,13 @@
+FileSet {
+	Name = "Configure_bacula"
+	Include {
+		Options {
+			signature = MD5
+			Compression = GZIP
+			recurse = yes
+			aclsupport = yes
+			xattrsupport = yes
+		}
+		File = /etc/bacula
+	}
+}
